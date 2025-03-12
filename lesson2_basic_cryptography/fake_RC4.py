@@ -42,10 +42,11 @@ def fake_rc4(plaintext, keystream):
     cyphertext = []
     keystream_lst = list(keystream)
     for i in range(len(plaintext)):
-        cypher_byte = plaintext[i] ^ int(keystream_lst[i % len(keystream_lst)])
+        cypher_byte = plaintext[i] ^ int(keystream_lst[i])
         cyphertext.append(cypher_byte)
+    
 
-    return bytes(cyphertext)
+    return bytes(cyphertext).decode(errors="ignore") 
 
 
 # TEST
