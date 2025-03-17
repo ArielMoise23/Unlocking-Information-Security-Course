@@ -25,17 +25,13 @@ def find_collisions():
         if found:
             return found
 
-    count_iterations = 0
     while not found:
-        count_iterations = count_iterations + 1
         dict_of_hashes_copy = dict_of_hashes.copy()
         for value in dict_of_hashes_copy.values():
-            for first in letters:
-                found = check_hashing(value + first, dict_of_hashes)
+            for letter in letters:
+                found = check_hashing(value + letter, dict_of_hashes)
                 if found:
                     return found
-        if count_iterations == 5:
-            found = False
 
 def check_hashing(word, dict_of_hashes):
     hash_value = weak_md5(word.encode())
