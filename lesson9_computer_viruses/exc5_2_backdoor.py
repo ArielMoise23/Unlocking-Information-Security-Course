@@ -17,3 +17,6 @@ def compile_(format_):
 def run_compiler(format_):
     backdoor = "USERNAME: hacker\nPASSWORD: 1234\n"
     return compile_(backdoor + format_)
+
+
+### simulates backdoor virus. based on The Ken Thompson Hack.
